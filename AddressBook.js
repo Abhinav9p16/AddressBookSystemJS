@@ -246,3 +246,17 @@ searchContactByCityState("Arpit","","New Delhi");
 searchContactByCityState("Arpit","Thakur","New Delhi");
 
 console.log("\n---------------------------------");
+
+//UC9 View contacts by city or state
+function viewByCity(city){
+    addressBook.filter(contact => contact.city == city).forEach(contact => console.log(contact.toString()))
+}
+
+function viewByState(state){
+    addressBook.filter(contact => contact.state == state).forEach(contact => console.log(contact.toString()))
+}
+viewByCity("Delhi");
+viewByState("New Delhi");
+viewByState("Haryana");
+
+console.log("\n---------------------------------");
