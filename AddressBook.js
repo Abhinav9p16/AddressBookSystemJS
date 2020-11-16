@@ -277,3 +277,16 @@ console.log("Count in New Delhi: "+getCountByState("New Delhi"));
 console.log("Count in Haryana: "+getCountByState("Haryana"));
 
 console.log("\n---------------------------------");
+
+//UC11 Sort contacts by name
+function sortContactsByName(){
+    return addressBook.sort((contact1,contact2) => {
+        if (contact1.firstName>contact2.firstName) return 1;
+        else if (contact1.firstName<contact2.firstName) return -1;
+        return 0;
+    });
+ }
+ console.log("The sorted Address Book is: ");
+ console.log(sortContactsByName().join("\n").toString());
+
+ console.log("\n---------------------------------");
