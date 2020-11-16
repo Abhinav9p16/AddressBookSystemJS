@@ -260,3 +260,20 @@ viewByState("New Delhi");
 viewByState("Haryana");
 
 console.log("\n---------------------------------");
+
+//UC 10 Get count by city or state
+function getCountByCity(city){
+    let count = 0;
+    addressBook.filter(contact => contact.city == city).forEach(contact => ++count);
+    return count;
+}
+function getCountByState(state){
+    let count = 0;
+    addressBook.filter(contact => contact.state == state).forEach(contact => ++count);
+    return count;
+}
+console.log("Count in Delhi: "+getCountByCity("Mussorie"));
+console.log("Count in New Delhi: "+getCountByState("New Delhi"));
+console.log("Count in Haryana: "+getCountByState("Haryana"));
+
+console.log("\n---------------------------------");
