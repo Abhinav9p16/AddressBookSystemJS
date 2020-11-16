@@ -183,3 +183,17 @@ function editContactAddress(firstName, lastName, newAddress) {
 
 editContactAddress("Abhinav", "Thakur", "Sec16-Rohini");
 process.stdout.write(addressBook.join("\n").toString());
+console.log("\n---------------------------------");
+
+// UC5 Delete contact from address book
+function deleteContactFromAddBook(firstName, lastName) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == firstName && addressBook[i].lastName == lastName)
+            addressBook.splice(i,1);
+    }
+}
+
+deleteContactFromAddBook("Abhinav", "Thakur");
+process.stdout.write(addressBook.join("\n").toString());
+
+console.log("\n---------------------------------");
