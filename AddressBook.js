@@ -158,3 +158,17 @@ try {
 } catch (e) {
     console.error(e);
 }
+// UC3 Create address book array of contacts
+let addressBook = new Array();
+addressBook.push(contact);
+
+addressBook.push(new Contact("Abhinav", "Thakur", "Rohini", "JDelhi",
+"New Delhi", "110089", "9013341138", "mail.at@gmail.com"));
+
+addressBook.push(new Contact("Arpit", "Thakur", "Rohini", "WDelhi",
+"New Delhi", "110085", "9998888888", "art@gmail.com"));
+
+addressBook.push(new Contact("Prajwal", "Rao", "NIT", "Kurukshetra",
+"Haryana", "101010", "9876543210", "prao@gmail.com"));
+
+process.stdout.write(addressBook.join("\n").toString());
