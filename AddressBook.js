@@ -230,3 +230,19 @@ function addContactInAddBook(contact) {
 }
 
 console.log("\n---------------------------------");
+
+//UC8 Check for contact in address book by city and state
+function searchContactByCityState(firstName, city, state){
+    let citySearch = addressBook.find(contact => contact.firstName == firstName && contact.city == city);
+    let stateSearch = addressBook.find(contact => contact.firstName == firstName && contact.state == state);
+    if (citySearch == undefined){
+        if (stateSearch == undefined){
+            console.log(firstName + " does not exist.");
+        }else {console.log(stateSearch.toString());}
+    }else {console.log(citySearch.toString());}
+}
+searchContactByCityState("Arpit","Thakur","");
+searchContactByCityState("Arpit","","New Delhi");
+searchContactByCityState("Arpit","Thakur","New Delhi");
+
+console.log("\n---------------------------------");
