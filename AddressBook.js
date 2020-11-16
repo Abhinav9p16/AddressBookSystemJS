@@ -165,7 +165,7 @@ addressBook.push(contact);
 addressBook.push(new Contact("Abhinav", "Thakur", "Rohini", "JDelhi",
 "New Delhi", "110089", "9013341138", "mail.at@gmail.com"));
 
-addressBook.push(new Contact("Arpit", "Thakur", "Rohini", "WDelhi",
+addressBook.push(new Contact("Arpit", "Thakur", "Rohini", "Delhi",
 "New Delhi", "110085", "9998888888", "art@gmail.com"));
 
 addressBook.push(new Contact("Prajwal", "Rao", "NIT", "Kurukshetra",
@@ -207,5 +207,26 @@ function countContactsInAddBook() {
 }
 
 process.stdout.write("No of contacts in address book: " + countContactsInAddBook());
+
+console.log("\n---------------------------------");
+
+// UC7 Check for duplicate contact in address book when adding 
+function addContactInAddBook(contact) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == contact.firstName && addressBook[i].lastName == contact.lastName) {
+            throw "Contact already exixts in Address Book";
+        }
+    }
+    addressBook.push(contact);
+}
+
+{
+    let contact = (new Contact("Arpit", "Thakur", "Rohini", "Delhi", "New Delhi", "110085", "9998888888", "art@gmail.com"))
+    try {
+        addContactInAddBook(contact);
+    } catch(e) {
+        console.error(e);
+    }
+}
 
 console.log("\n---------------------------------");
