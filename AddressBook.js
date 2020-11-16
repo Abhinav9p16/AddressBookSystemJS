@@ -290,3 +290,40 @@ function sortContactsByName(){
  console.log(sortContactsByName().join("\n").toString());
 
  console.log("\n---------------------------------");
+
+ //UC 12 Sort contacts by other parameters
+function sortContacts(type){
+    switch(type){
+        case "name": addressBook.sort((contact1,contact2) => {
+                        if (contact1.firstName>contact2.firstName) return 1;
+                        else if (contact1.firstName<contact2.firstName) return -1;
+                        return 0;
+                        }); break;
+        case "city": addressBook.sort((contact1,contact2) => {
+                        if (contact1.city>contact2.city) return 1;
+                        else if (contact1.city<contact2.city) return -1;
+                        return 0;
+                        }); break;
+        case "state": addressBook.sort((contact1,contact2) => {
+                        if (contact1.state>contact2.state) return 1;
+                        else if (contact1.state<contact2.state) return -1;
+                        return 0;
+                        }); break;
+        case "zip": addressBook.sort((contact1,contact2) => {
+                            return contact1.zip-contact2.zip;
+                        }); break;
+        default: console.log("Type Not found.");
+    }
+}
+
+sortContacts("city");
+console.log("The sorted Address Book on City is: ");
+console.log(addressBook.join("\n").toString());
+
+sortContacts("state");
+console.log("The sorted Address Book on State is: ");
+console.log(addressBook.join("\n").toString());
+
+sortContacts("zip");
+console.log("The sorted Address Book on Zip is: ");
+console.log(addressBook.join("\n").toString());
