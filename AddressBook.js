@@ -172,3 +172,14 @@ addressBook.push(new Contact("Prajwal", "Rao", "NIT", "Kurukshetra",
 "Haryana", "101010", "9876543210", "prao@gmail.com"));
 
 process.stdout.write(addressBook.join("\n").toString());
+
+// UC4 Edit address of contact in address book
+function editContactAddress(firstName, lastName, newAddress) {
+    for(i = 0; i < addressBook.length; i++) {
+        if(addressBook[i].firstName == firstName && addressBook[i].lastName == lastName)
+            addressBook[i].address = newAddress;
+    }
+}
+
+editContactAddress("Abhinav", "Thakur", "Sec16-Rohini");
+process.stdout.write(addressBook.join("\n").toString());
